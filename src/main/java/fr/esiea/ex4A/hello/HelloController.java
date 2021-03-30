@@ -17,6 +17,7 @@ class HelloController {
     @GetMapping(path = "/hello", produces = MediaType.APPLICATION_JSON_VALUE)
     HelloData sayHello(@RequestParam(name = "name", required = false) String name) {
         final HelloData helloData;
+        System.out.println("hello there !");
         if (name == null || name.isBlank()) {
             helloData = helloRepository.randomHello();
         } else {
